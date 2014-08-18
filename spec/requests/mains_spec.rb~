@@ -1,0 +1,13 @@
+require 'spec_helper'
+
+describe "Main" do
+
+  describe "Home page" do
+
+    it "should have the content 'Track My Mixes'" do
+      visit '/main/home'
+      expect(page).to have_content('Track My Mixes')
+    end
+  end
+end
+
