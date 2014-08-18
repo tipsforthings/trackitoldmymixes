@@ -1,2 +1,3 @@
+<% provide(:title, 'Home') %>
 <h1>Welcome to Track My Mixes</h1>
 <p>Find me in app/views/main/home.html.erb</p>

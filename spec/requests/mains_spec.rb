@@ -9,9 +9,14 @@ describe "Main pages" do
       expect(page).to have_content('Track My Mixes')
     end
 
-    it "should have the title 'Track My Mixes | Home'" do
+    it "should have the base title" do
       visit '/main/home'
-      expect(page).to have_title("Track My Mixes | Home")
+      expect(page).to have_title("Track My Mixes")
+    end
+
+    it "should not have a custom page title" do
+      visit '/main/home'
+      expect(page).not_to have_title('| Home')
     end
   end
 
