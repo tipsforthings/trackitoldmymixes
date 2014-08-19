@@ -1,4 +1,6 @@
 Bootstrap::Application.routes.draw do
+  get "users/new"
+  match '/signup',  to: 'users#new',            via: 'get'
   match '/help',    to: 'main#help',    via: 'get'
   match '/about',   to: 'main#about',   via: 'get'
   match '/contact', to: 'main#contact', via: 'get'
