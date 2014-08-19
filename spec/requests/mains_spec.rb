@@ -1,71 +1,32 @@
 require 'spec_helper'
+  describe "Main" do
 
-describe "Main pages" do
+  subject { page }
 
   describe "Home page" do
-
-    it "should have the content 'Track My Mixes'" do
-      visit '/main/home'
-      expect(page).to have_content('Track My Mixes')
-    end
-
-    it "should have the base title" do
-      visit '/main/home'
-      expect(page).to have_title("Track My Mixes")
-    end
-
-    it "should not have a custom page title" do
-      visit '/main/home'
-      expect(page).not_to have_title('| Home')
-    end
+    before { visit root_path }
+    it { should have_content('Sign Up') }
+    it { should have_title(full_title('')) }
+    it { should_not have_title('| Home') }
   end
-
   describe "Help page" do
-
-    it "should have the content 'Help'" do
-      visit '/main/help'
-      expect(page).to have_content('Help')
-    end
-
-    it "should have the title 'Track My Mixes | Help'" do
-      visit '/main/help'
-      expect(page).to have_title("Track My Mixes | Help")
-    end
+    before { visit help_path }
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
-
   describe "About page" do
-    it "should have the content 'About Us'" do
-      visit '/main/about'
-      expect(page).to have_content('About Us')
-    end
-
-    it "should have the title 'Track My Mixes | About Us'" do
-      visit '/main/about'
-      expect(page).to have_title("Track My Mixes | About Us")
-    end
+    before { visit about_path }
+    it { should have_content('About') }
+    it { should have_title(full_title('About Us')) }
   end
-
   describe "Contact page" do
-    it "should have the content 'Contact Us'" do
-      visit '/main/contact'
-      expect(page).to have_content('Contact Us')
-    end
-
-    it "should have the title 'Track My Mixes | Contact Us'" do
-      visit '/main/contact'
-      expect(page).to have_title("Track My Mixes | Contact Us")
-    end
+    before { visit contact_path }
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
   end
-
   describe "Blog page" do
-    it "should have the content 'Blog'" do
-      visit '/main/blog'
-      expect(page).to have_content('Blog')
-    end
-
-    it "should have the title 'Track My Mixes | Blog'" do
-      visit '/main/blog'
-      expect(page).to have_title("Track My Mixes | Blog")
-    end
+    before { visit blog_path }
+    it { should have_content('Blog') }
+    it { should have_title(full_title('Blog')) }
   end
 end

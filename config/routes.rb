@@ -1,9 +1,8 @@
 Bootstrap::Application.routes.draw do
-  get "main/home"
-  get "main/help"
-  get "main/about"
-  get "main/contact"
-  get "main/blog"
+  match '/help',    to: 'main#help',    via: 'get'
+  match '/about',   to: 'main#about',   via: 'get'
+  match '/contact', to: 'main#contact', via: 'get'
+  match '/blog',    to: 'main#blog',    via: 'get'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
